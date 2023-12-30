@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="ml-16 flex space-x-4">
+        <div>
+            <a class="hover:text-blue-600">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="" class="w-[64px]">
+                <h6 class="font-medium">All products</h6>
+
+            </a>
+        </div>
+        <div>
+            <a class="hover:text-blue-600">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="" class="w-[64px]" >
+                <h6 class="font-medium">Electronics</h6>
+            </a>
+        </div>
+        <div>
+            <a class="hover:text-blue-600">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="" class="w-[64px]">
+                <h6 class="font-medium">Fashion</h6>
+            </a>
+        </div>
+        <div>
+            <a class="hover:text-blue-600">
+                <img style="width: 62px; margin-top: 5px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="" class="w-[64px]">
+                <h6 class="font-medium">Jewllery</h6>
+            </a>
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class="container">
+    <div class="flex flex-wrap px-16 py-8">
+        <ng-container *ngFor="let item of productList">
+            <div class="w-1/4 border border-gray-200 p-8">
+                <img class="w-[200px] h-[200px] transition-transform transform-gpu hover:scale-110 mx-auto" src="{{item.image}}" alt="">
+                <h5 class="font-bold truncate ... p-4">{{item.title}}</h5>
+                <p class="truncate ...">{{item.description}}</p>
+                <p class="p-4 text-center"><strong>Price</strong>${{item.price}}</p>
+                <button class="bg-blue-700 w-full p-2 rounded-md text-white" (click)="addToCart(item)">Add to cart</button>
+            </div>
+
+        </ng-container>
+        
+    </div>
+
+</div>

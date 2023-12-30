@@ -1,0 +1,70 @@
+<ng-container *ngIf="product.length!=0">
+    <div class=" ">
+        <!-- <div class=""> -->
+            <div class="px-8">
+                <table class="w-full">
+                    <thead class="border-b border-gray-500">
+                        <tr>
+                            <th class="p-4">Sr.No</th>
+                            <th class="p-4">Product Name</th>
+                            <th class="p-4">Product Image</th>
+                            <th class="p-4">Description</th>
+                            <th class="p-4">Price</th>
+                            <th class="p-4">Quantity</th>
+                            <th class="p-4">Total</th>
+                            <th class="p-4">Action</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody class="">
+                        <tr class="border-b border-gray-300" *ngFor="let item of product; let i=index">
+                            <td class="p-4 text-center">{{i+1}}</td>
+                            <td class="w-[20%] p-4 text-center">{{item.title}}</td>
+                            <td class="p-5"><img style="width: 120px;" src="{{item.image}}" alt=""></td>
+                            <td class="p-4 text-center w-[25%]">{{item.description}}</td>
+                            <td class="p-4 text-center">{{item.price}}</td>
+                            <td class="p-4 text-center">{{item.quantity}}</td>
+                            <td class="p-4 text-center">{{item.total}}</td>
+                            <td class="p-4 text-center">
+                                <button class="bg-red-600 px-2 py-1 text-white" (click)="removeItem(item)"><i class="fa fa-trash" aria-hidden="true"></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                        <tr >
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td class="p-4 text-center"><button (click)="emptyCart()" class="bg-red-600  rounded-md p-2 text-white ">Empty Cart</button></td>
+                            <td class="p-4"><button routerLink="/products" class="bg-green-600 rounded-md p-2 text-white">Shop More</button></td>
+                            <td></td>
+                            <td><strong>Grand Total : ${{grandTotal}}</strong></td>
+                        </tr>
+                      
+
+
+                    </tbody>
+                </table>
+            </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="product.length==0">
+    <div class="m-8 shadow-md">
+        <div class="font-bold p-4">
+            <h5>My Cart</h5>
+        </div>
+        <div class="text-center pt-8 space-y-4 p-4">
+            <img class="mx-auto h-[300px] w-[300px]" src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+            <h4 class=" text-2xl font-bold text-gray-700">Your cart is empty!</h4>
+            <h5 class="font-medium text-gray-700">Add item to it now</h5>
+            <button class="bg-blue-700 p-2 rounded-md text-white" routerLink="/products">Shop Now</button>
+        </div>
+
+        
+        
+    </div>
+
+</ng-container>
+
